@@ -1,18 +1,17 @@
-var express = require('express');
+var express = require("express");
 
 var app = express();
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + "/views"));
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
+  // Change the 'color' variable to a different color!
+  var color = "red";
 
-// Change the 'color' variable to a different color!
-  var color = 'SteelBlue';
-
-  res.render('index', {color: color});
+  res.render("index", { color: color });
 });
 
-console.log('listening on port 8080...\n');
+console.log("listening on port 8080...\n");
 app.listen(8080);
